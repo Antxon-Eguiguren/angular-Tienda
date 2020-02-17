@@ -1,0 +1,18 @@
+.wrapper {
+    background-color: azure;
+}
+
+.productos {
+    margin: 20px;
+}
+
+.titulo {
+    background-color: rgb(29, 29, 54);
+    color: tomato;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.filtro {
+    margin: 20px;
+}

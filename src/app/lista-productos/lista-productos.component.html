@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="container-fluid titulo">
+        <h1>Tienda Online Especializada en Mac</h1>
+    </div>
+    <div class="container">
+        <div class="row sticky-top filtro shadow p-3 mb-5 bg-white rounded">
+            <select (change)="manejarFiltro($event)" class="custom-select">
+                <option selected>Filtrar por Categoría</option>
+                <option value="">Todas</option>
+                <option value="iphone">iPhone</option>
+                <option value="macbook">MacBook</option>
+                <option value="imac">iMac</option>
+                <option value="macmini">MacMini</option>
+                <option value="ipad">iPad</option>
+                <option value="watch">Watch</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="productos" *ngFor="let producto of arrProductos">
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 21rem;">
+                    <img [src]="producto.image" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">{{producto.name}}</h3>
+                        <h4 class="card-title">{{producto.price}}€</h4>
+                        <h5 class="card-title">Categoría: {{producto.categoria}}</h5>
+                        <h5 class="card-title">SKU: {{producto.id}}</h5>
+                        <p class="card-text">{{producto.description}}</p>
+                        <a href="#" class="btn btn-primary">Ver Producto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
