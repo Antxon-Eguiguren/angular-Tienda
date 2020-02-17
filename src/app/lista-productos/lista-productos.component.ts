@@ -21,4 +21,17 @@ export class ListaProductosComponent implements OnInit {
     this.arrProductos = await this.productosService.getByCategory($event.target.value);
   }
 
+  async manejarClickComprar(pProducto) {
+    if (localStorage.getItem('token') === null) {
+      // Creamos el carrito
+      const response = await this.productosService.getToken();
+
+      // Guardamos el carrito en el LS
+      localStorage.setItem('token', response.token_cart);
+    }
+
+    // Guardamos el producto en el carrito
+    const responseAdd = await this.productosService.agregarAlCarrito(pProducto);
+    console.log(responseAdd);
+  }
 }
