@@ -13,6 +13,19 @@
     display: flex;
     justify-content: center;
 }
+
 .filtro {
     margin: 20px;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
 }

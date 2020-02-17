@@ -21,11 +21,11 @@ export class ProductosService {
     return this.httpClient.get<any>(`${this.baseUrl}/${pCategory}`).toPromise();
   }
 
-  getToken(): Promise<any> {
+  createToken(): Promise<any> {
     return this.httpClient.post<any>(`${this.baseUrl}/newcart`, {}).toPromise();
   }
 
-  agregarAlCarrito(pProducto: Producto): Promise<any> {
+  addToCart(pProducto: Producto): Promise<any> {
     const body = {
       item_id: pProducto.id
     };
