@@ -11,7 +11,7 @@
     color: tomato;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .filtro {
@@ -28,4 +28,10 @@
     background-color: white;
     color: black;
     outline: 1px solid black;
+}
+
+.btn-carrito {
+    background-color: azure;
+    color: tomato;
+    margin-top: 10px;
 }

@@ -1,0 +1,33 @@
+.wrapper {
+    background-color: azure;
+}
+
+.productos {
+    margin: 20px;
+}
+
+.titulo {
+    background-color: rgb(29, 29, 54);
+    color: tomato;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+}
+
+.btn-carrito {
+    background-color: azure;
+    color: tomato;
+    margin-top: 10px;
+}

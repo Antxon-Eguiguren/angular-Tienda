@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { Producto } from '../models/producto';
+import { ID_CARRITO } from '../utils';
 
 @Component({
   selector: 'app-lista-productos',
@@ -22,17 +23,16 @@ export class ListaProductosComponent implements OnInit {
   }
 
   async manejarClickComprar(pProducto) {
-    if (localStorage.getItem('token') === null) {
+    if (localStorage.getItem(ID_CARRITO) === null) {
 
       // Creamos el token del carrito
       const responseToken = await this.productosService.createToken();
 
       // Guardamos el token del carrito en el LS (en caso de que no estuviera ya creado)
-      localStorage.setItem('token', responseToken.token_cart);
+      localStorage.setItem(ID_CARRITO, responseToken.token_cart);
     }
 
-    // Guardamos el producto en el carrito
-    const responseAddToCart = await this.productosService.addToCart(pProducto);
-    console.log(responseAddToCart);
+    // Guardamos el producto en el carrito mediante la petición POST
+    await this.productosService.addToCart(pProducto);
   }
 }
